@@ -1,0 +1,134 @@
+@page "/productos"
+
+@inject IProductoService _productoService
+@inject IToastService _toastService
+@inject SweetAlertService _sweetAlertService
+
+@attribute [Authorize(Roles = "Administrador")]
+
+<div class="row justify-content-center  mt-3">
+    <div class="col-sm-6 col-md-4 col-xl-3 mb-4">
+        <div class="d-grid gap-1 col-12 mx-auto">
+            <a class="btn btn-primary" href="/producto">Nuevo producto</a>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-8 col-xl-9 mb-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar producto..." @bind-value="buscar">
+            <button class="btn btn-outline-secondary" type="button" @onclick="(async()=> await GetProductos(buscar))">
+                <i class="oi oi-magnifying-glass"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row gx-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-start mt-2">
+
+    @if (productos != null)
+    {
+        @foreach (var producto in productos)
+        {
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Sale badge-->
+
+                    @if (DateTime.Now < producto.FechaCreacion!.Value.AddDays(30))
+                    {
+                        <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Nuevo</div>
+                    }
+
+                    <!-- Product image-->
+                    <img class="card-img-top border-dark border-1" src="@producto.Imagen">
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">@producto.Nombre</h5>
+                            <!-- Product price-->
+
+                            @if (producto.PrecioOferta != 0 && producto.PrecioOferta < producto.Precio)
+                            {
+                                <span class="text-danger text-decoration-line-through">S/. @producto.Precio</span>
+                                <span>S /.@producto.PrecioOferta</span>
+                            }
+                            else
+                            {
+                                <span>S /.@producto.Precio</span>
+                            }
+
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer bg-transparent">
+                        <div class="row justify-content-between">
+                            <a class="col-5 btn btn-sm btn-outline-primary mt-auto" href="/producto/@producto.IdProducto"><i
+                                    class="oi oi-pencil fs-5"></i></a>
+                            <button class="col-5 btn btn-sm btn-outline-danger mt-auto"
+                                @onclick="(async () => await Eliminar(producto))">
+                                <i class="oi oi-trash fs-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    }
+
+
+</div>
+
+@code {
+    private List<ProductoDTO>? productos = null;
+    private string buscar = "";
+
+    private async Task GetProductos(string valor = "")
+    {
+        var response = await _productoService.Lista(valor);
+
+        if (response.Success)
+        {
+            productos = (List<ProductoDTO>)response.Result!;
+        }
+        else
+        {
+            productos = new List<ProductoDTO>();
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetProductos();
+    }
+
+    private async Task Eliminar(ProductoDTO producto)
+    {
+        SweetAlertResult alertResult = await _sweetAlertService.FireAsync(new SweetAlertOptions
+            {
+                Text = $"¿Desea eliminar el producto {producto.Nombre}?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Si, Eliminar",
+                CancelButtonText = "No, Cancelar"
+            });
+
+        if (!string.IsNullOrEmpty(alertResult.Value))
+        {
+            var response = await _productoService.Eliminar(producto.IdProducto);
+            if (response.Success)
+            {
+                _toastService.ShowSuccess("El producto fue eliminado correctamente");
+                await GetProductos();
+            }
+            else
+            {
+                _toastService.ShowWarning(response.Message!);
+            }
+        }
+
+    }
+}

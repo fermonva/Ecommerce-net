@@ -1,0 +1,156 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Ecommerce.WebAssembly.csproj": {}
+  },
+  "projects": {
+    "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.DTO/Ecommerce.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.DTO/Ecommerce.DTO.csproj",
+        "projectName": "Ecommerce.DTO",
+        "projectPath": "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.DTO/Ecommerce.DTO.csproj",
+        "packagesPath": "/Users/fermonva/.nuget/packages/",
+        "outputPath": "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.DTO/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fermonva/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.423/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Ecommerce.WebAssembly.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Ecommerce.WebAssembly.csproj",
+        "projectName": "Ecommerce.WebAssembly",
+        "projectPath": "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Ecommerce.WebAssembly.csproj",
+        "packagesPath": "/Users/fermonva/.nuget/packages/",
+        "outputPath": "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fermonva/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.DTO/Ecommerce.DTO.csproj": {
+                "projectPath": "/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.DTO/Ecommerce.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Blazored.Toast": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "CurrieTechnologies.Razor.SweetAlert2": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[6.0.31, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[6.0.31, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.31, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.31, 6.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.423/RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

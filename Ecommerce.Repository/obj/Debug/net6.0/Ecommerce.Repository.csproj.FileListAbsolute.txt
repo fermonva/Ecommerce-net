@@ -1,0 +1,15 @@
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/bin/Debug/net6.0/Ecommerce.Repository.deps.json
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/bin/Debug/net6.0/Ecommerce.Repository.dll
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/bin/Debug/net6.0/Ecommerce.Repository.pdb
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/bin/Debug/net6.0/Ecommerce.Model.dll
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/bin/Debug/net6.0/Ecommerce.Model.pdb
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/Ecommerce.Repository.csproj.AssemblyReference.cache
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/Ecommerce.Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/Ecommerce.Repository.AssemblyInfoInputs.cache
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/Ecommerce.Repository.AssemblyInfo.cs
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/Ecommerce.Repository.csproj.CoreCompileInputs.cache
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/Ecommerce.Repository.dll
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/refint/Ecommerce.Repository.dll
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/Ecommerce.Repository.pdb
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/ref/Ecommerce.Repository.dll
+/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.Repository/obj/Debug/net6.0/Ecommerce.Repository.csproj.CopyComplete

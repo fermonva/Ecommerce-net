@@ -1,0 +1,172 @@
+@page "/producto"
+@page "/producto/{id:int}"
+
+@inject ICategoriaService _categoriaService
+@inject IProductoService _productoService
+@inject IToastService _toastService
+@inject NavigationManager _navigationManager
+
+@attribute [Authorize(Roles = "Administrador")]
+
+<div class="row justify-content-center  mt-3">
+    <p class="col-sm-12 col-md-8 col-xl-10 h4 mt-2">@titulo</p>
+</div>
+<div class="row justify-content-center  mt-3">
+    <div class="col-sm-12 col-md-8 col-xl-10">
+
+        <EditForm Model="modelo" OnValidSubmit="Guardar">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <div class="input-group">
+                <span class="input-group-text bg-light" id="basic-addon3">Nombre</span>
+                <input type="text" class="form-control" @bind-value="modelo.Nombre">
+            </div>
+            <ValidationMessage For="@(()=>modelo.Nombre)" />
+
+            <div class="input-group  mt-3">
+                <span class="input-group-text bg-light">Descripcion</span>
+                <textarea class="form-control" @bind="modelo.Descripcion"></textarea>
+
+            </div>
+            <ValidationMessage For="@(()=>modelo.Descripcion)" />
+
+            <div class="input-group mt-3">
+                <label class="input-group-text bg-light" for="inputGroupSelect01">Categoria</label>
+                <select class="form-select" value="@modelo.IdCategoria" @onchange="CambiarCategoria">
+                    @foreach (var item in listaCategoria)
+                    {
+                        <option value="@item.IdCategoria">@item.Nombre</option>
+                    }
+                </select>
+            </div>
+
+            <div class="input-group mt-3">
+                <span class="input-group-text bg-light" id="basic-addon3">Precio</span>
+                <input type="number" class="form-control" @bind-value="modelo.Precio">
+            </div>
+            <ValidationMessage For="@(()=>modelo.Precio)" />
+
+            <div class="input-group mt-3">
+                <span class="input-group-text bg-light" id="basic-addon3">Precio Oferta</span>
+                <input type="number" class="form-control" @bind-value="modelo.PrecioOferta">
+            </div>
+            <ValidationMessage For="@(()=>modelo.PrecioOferta)" />
+
+            <div class="input-group mt-3">
+                <span class="input-group-text bg-light" id="basic-addon3">Cantidad</span>
+                <input type="number" class="form-control" @bind-value="modelo.Cantidad">
+            </div>
+            <ValidationMessage For="@(()=>modelo.Cantidad)" />
+
+            <div class="input-group mt-3">
+                <label class="input-group-text bg-light">Imagen</label>
+                <InputFile type="file" class="form-control" accept="image/png, image/gif, image/jpeg"
+                    OnChange="OnFileChange"></InputFile>
+            </div>
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary" style="width:130px">@boton</button>
+                <a href="/productos" class="btn btn-secondary" style="width:130px">Volver</a>
+            </div>
+        </EditForm>
+
+
+
+
+    </div>
+
+</div>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    private string titulo { get; set; } = "Nuevo Producto";
+    private string boton = "Crear";
+    private List<CategoriaDTO> listaCategoria = new();
+    private ProductoDTO modelo = new();
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await _categoriaService.Lista("");
+
+        if (response.Success)
+        {
+            listaCategoria = (List<CategoriaDTO>)response.Result!;
+
+            if (listaCategoria.Any() && id == 0)
+            {
+                modelo.IdCategoria = listaCategoria.First().IdCategoria;
+            }
+        }
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (id > 0)
+        {
+            var response = await _productoService.Obtener(id);
+            if (response.Success)
+            {
+                modelo = (ProductoDTO)response.Result!;
+                titulo = "Editar Producto";
+                boton = "Actualizar";
+            }
+            else
+            {
+                _toastService.ShowError(response.Message!);
+                _navigationManager.NavigateTo("/productos");
+            }
+        }
+    }
+
+
+    private void CambiarCategoria(ChangeEventArgs e)
+    {
+        modelo.IdCategoria = Convert.ToInt32(e.Value!.ToString());
+    }
+
+    async Task OnFileChange(InputFileChangeEventArgs e)
+    {
+        FileInfo fileInfo = new(e.File.Name);
+
+        if (fileInfo.Extension.ToLower().Contains(".jpeg") || fileInfo.Extension.ToLower().Contains(".jpg") ||
+        fileInfo.Extension.ToLower().Contains(".png"))
+        {
+            var format = $"image/{fileInfo.Extension.Replace(".", "")}";
+            var resizeImage = await e.File.RequestImageFileAsync(format, 450, 300);
+            var buffer = new byte[resizeImage.Size];
+            await resizeImage.OpenReadStream().ReadAsync(buffer);
+            var imageData = $"data:{format};base64,{Convert.ToBase64String(buffer)}";
+            modelo.Imagen = imageData;
+        }
+    }
+
+
+    private async Task Guardar()
+    {
+        if (id > 0)
+        {
+            var response = await _productoService.Editar(modelo);
+            if (response.Success)
+            {
+                _toastService.ShowSuccess("Se Actualizo el producto correctamente");
+                _navigationManager.NavigateTo("/productos");
+            }
+            else
+            {
+                _toastService.ShowError("No se pudo editar el producto");
+            }
+        }
+        else
+        {
+            var response = await _productoService.Crear(modelo);
+            if (response.Success)
+            {
+                _toastService.ShowSuccess("Se Creo el producto correctamente");
+                _navigationManager.NavigateTo("/productos");
+            }
+            else
+            {
+                _toastService.ShowError("No se pudo crear el producto");
+            }
+        }
+    }
+}

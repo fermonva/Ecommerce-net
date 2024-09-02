@@ -1,0 +1,91 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = Ecommerce.WebAssembly
+build_property.RootNamespace = Ecommerce.WebAssembly
+build_property.ProjectDir = /Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Admin/Categoria.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vQ2F0ZWdvcmlhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Admin/Categorias.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vQ2F0ZWdvcmlhcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Admin/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Admin/Producto.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUHJvZHVjdG8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Admin/Productos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUHJvZHVjdG9zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Admin/Usuario.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vVXN1YXJpby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Admin/Usuarios.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vVXN1YXJpb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Autorizacion/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXV0b3JpemFjaW9uL0xvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Autorizacion/Registro.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXV0b3JpemFjaW9uL1JlZ2lzdHJvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Tienda/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGllbmRhL0NhcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Tienda/Catalogo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGllbmRhL0NhdGFsb2dvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Pages/Tienda/Detalle.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGllbmRhL0RldGFsbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Shared/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0xvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/fermonva/Developer/Net/EcommerceNet/Ecommerce.WebAssembly/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
